@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                border: 1px solid #dddddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="GET">
+            {% csrf_token %}
+            <center>
+                {% for obj in data %}
+                <table>
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>City</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{obj.id}}</td>
+                        <td>{{obj.field1}}</td>
+                        <td>{{obj.field2}}</td>
+                        <td>
+                            <form method="POST">
+                                {% csrf_token %}
+                                <button type="submit">POST</button>
+                            </form>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                {% endfor %}
+                <h3> This is GET page </h3>
+            <center>
+    </body>
+</html>

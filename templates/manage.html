@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTTP Methods</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        margin: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    #message {
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 300px;
+        text-align: center;
+        background-color: #fff;
+    }
+
+    textarea {
+        width: 300px;
+        height: 150px; /* Adjust height as needed */
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    {% csrf_token %}
+    
+    <form method="GET">
+        <button type="submit">GET</button>
+    </form>
+
+]    <form id="postForm" method="POST">
+        <button type="submit">POST</button>
+    </form>
+    
+    <form id="putForm" method="PUT">
+        <button type="submit">PUT</button>
+    </form>
+    
+    <form id="deleteForm" method="DELETE">
+        <button type="submit">DELETE</button>
+    </form>
+
+    <textarea id="textarea" placeholder="Type your message here..."></textarea>
+
+</div>
+
+</body>
+</html>
